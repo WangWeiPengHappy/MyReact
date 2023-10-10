@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Study</title>
+    <!-- react cdn devlopment -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- react cdn for production 
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    -->
+    <!-- ES6 parse -->
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        
+        class HelloReact extends React.Component{
+            // constructor(props) {
+            //     super(props)
+            //     this.state = {
+            //         name: "test",
+            //         age: 18,
+            //         sex: 'male'
+            //     }
+            //     // this.updateInfo = this.updateInfo.bind(this)
+            // }
+            state = {
+                    name: "test",
+                    age: 18,
+                    sex: 'male'
+                }
+            // updateInfo = () => {
+            //     this.setState({
+            //         name: "test2",
+            //         age: 13,
+            //         sex: 'male'
+            //     })
+            // }
+            updateInfo(){
+                this.setState({
+                    name: "test2",
+                    age: 13,
+                    sex: 'male'
+                })
+            }
+            render() {
+                return <div>
+                    <h2>This is 09事件处理</h2>
+                    <p> name: {this.state.name}</p>
+                    <p> age: {this.state.age}</p>
+                    <p> sex: {this.state.sex}</p>
+                    {/*<button onClick={this.updateInfo}>update</button>*/}
+                    <button onClick={()=>this.updateInfo()}>update</button>
+                </div>
+            }
+
+        }
+
+        ReactDOM.render(
+            <HelloReact />,
+            document.getElementById("root")
+        )
+    </script>
+
+</body>
+</html>

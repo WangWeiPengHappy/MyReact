@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Study</title>
+    <!-- react cdn devlopment -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- react cdn for production 
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    -->
+    <!-- ES6 parse -->
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class HelloReact extends React.Component{
+            render() {
+                return <div>
+                    <h2>This is state compent</h2>
+                    <p> name: {this.props.name}</p>
+                    <p> age: {this.props.age}</p>
+                    <p> sex: {this.props.sex}</p>
+                </div>
+            }
+
+        }
+
+        ReactDOM.render(
+            <HelloReact name="test" age="18" sex="male" />,
+            document.getElementById("root")
+        )
+    </script>
+
+</body>
+</html>
